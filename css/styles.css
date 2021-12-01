@@ -7,7 +7,7 @@ html {
     min-height: 100vh;
     max-width: 1400px; 
     margin: 0 auto;
-    background: rgba(201, 190, 190, 0.3);
+    background: rgba(243, 239, 194, 0.3);
 }
 
 body {
@@ -18,12 +18,13 @@ header h1 {
     font-size: 20px;
     margin-top: 30px;
     padding-left: 20px;
+    color: #0774bd;
 }
 
 #search {
     width: 50%;
     height: 40px;
-    border: #d3caca 2px solid;
+    border: #e2dfdf 2px solid;
     border-radius: 20px;
     padding-left:20px;
     margin:20px 20px 15px; 
@@ -38,11 +39,16 @@ header h1 {
     width: 100%;
     padding:20px;
 }
- .avatar{
+.avatar{
      border-radius: 50%;
-     width:40%;
- }
- h2 {
+      width:35%;
+      transition: all .5s;
+}
+.avatar:hover {
+    transform: scale(1.5) rotate(10deg);
+  }
+ 
+h2 {
  font-size: 16px;
 }
 p {
@@ -51,16 +57,19 @@ p {
     font-weight: lighter;
 }
  .card{
-    display: flex;
+   display: flex;
    align-items: center; 
    border: #d3caca 2px solid;
    border-radius: 5px;
-   padding: 10px;
+   padding: 12px;
    background-color: white;
  }
  .text-container {
      line-height: 1.15;
      padding-left: 15px;
+ }
+ .email {
+     color: #006cb4;
  }
 
 .overlay {
@@ -69,7 +78,7 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgb(100, 100, 100, 0.4)
+    background: rgba(75, 80, 49, 0.8)
 }
 .modal {
     width: 375px;
