@@ -143,11 +143,13 @@ switchForth.addEventListener('click', () => {
 switchBack.addEventListener('click', () => {
     
   if (indexOfModal !== 0) {
-   indexOfModal--;
-   displayModal(indexOfModal);
+    indexOfModal--;
+    displayModal(indexOfModal); 
+  
   } else {
-      indexOfModal =11;
-  displayModal(indexOfModal);
+    indexOfModal =11;
+    displayModal(indexOfModal);
+   
   }
 
 });
