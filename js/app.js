@@ -5,6 +5,9 @@ const gridContainer =document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
+const switchForth = document.querySelector(".switch-forth");
+const switchBack = document.querySelector(".switch-back");
+const search = document.getElementById("search");
 
 
 // fetch data from API
@@ -19,6 +22,7 @@ fetch(urlAPI)
 // displayEmployees function
 function displayEmployees(employeeData) {
     employees = employeeData;
+    // console.log(employees.length);
 
     // store the employee HTML as we create it
     let employeeHTML = '';
@@ -46,9 +50,9 @@ function displayEmployees(employeeData) {
 };
 
 // displayModel function
-let indexOfModal = 0;
 
 function displayModal(index){
+    // console.log(index);
     
     // use object destructuring make the template literal cleaner
     let { name, 
@@ -71,7 +75,7 @@ function displayModal(index){
                 <p class="address">${city}</p>
                 <hr />
                 <p>${phone}</p>
-                <p class="address">${street}, ${state} ${postcode}</p>
+                <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
                 <p>Birsthday:
                 ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
                 </div>
@@ -101,5 +105,49 @@ modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
 
+//  searchFilter Function for Employees can be filtered by name
+
+function searchFilter(e) {
+    let searchName = e.target.value.toLowerCase();
+    let employeeNames = document.querySelectorAll(".name");
+
+    employeeNames.forEach(employeeName => {
+         let name =employeeName.textContent.toLowerCase();
+         let nameOfEmployee = employeeName.parentElement.parentElement;
+
+      if(name.includes(searchName)){
+        nameOfEmployee.style.display = "";
+      } else {
+        nameOfEmployee.style.display = "none";
+      }
+    });
+}
+
+search.addEventListener('input', searchFilter);
 
 
+// switchBackForth function is to switch back and forth between employees
+//  when the detial modal window is open
+let indexOfModal = 0;
+
+switchForth.addEventListener('click', () => {
+    if (indexOfModal !== employees.length-1) {
+     indexOfModal++;
+     displayModal(indexOfModal);
+    } else {
+     indexOfModal = 0;
+    displayModal(indexOfModal);
+    }
+});
+
+switchBack.addEventListener('click', () => {
+    
+  if (indexOfModal !== 0) {
+   indexOfModal--;
+   displayModal(indexOfModal);
+  } else {
+      indexOfModal =11;
+  displayModal(indexOfModal);
+  }
+
+});
