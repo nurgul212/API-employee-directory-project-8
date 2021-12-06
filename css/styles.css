@@ -8,26 +8,29 @@ html {
     max-width: 1400px; 
     margin: 0 auto;
     background: rgba(243, 239, 194, 0.3);
+    background: linear-gradient(-35deg, #d9917b, #729336, #6a8687, #91ddcb);
 }
 
 body {
     position: relative;
+   
 }
 
 header h1 {
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 30px;
     margin-top: 30px;
     padding-left: 20px;
-    color: #0774bd;
+    color: rgb(1, 29, 42, 0.8);
+    text-align: center;
 }
 
 #search {
-    width: 50%;
+    width: 30%;
     height: 40px;
-    border: #e2dfdf 2px solid;
+    border: 3px groove orange;
     border-radius: 20px;
-    padding-left:20px;
+    padding-left:9px;
     margin:20px 20px 15px; 
     font-size: 13px;
 }
