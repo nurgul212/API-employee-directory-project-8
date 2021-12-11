@@ -8,7 +8,7 @@ html {
     max-width: 1400px; 
     margin: 0 auto;
     background: rgba(243, 239, 194, 0.3);
-    background: linear-gradient(-35deg, #d9917b, #729336, #6a8687, #91ddcb);
+    background: linear-gradient(-35deg,  #729336,  #6a8687, #d9917b,#91ddcb);
 }
 
 body {
@@ -26,12 +26,12 @@ header h1 {
 }
 
 #search {
-    width: 30%;
-    height: 40px;
+    width: 50%;
+    height: 45px;
     border: 3px groove orange;
     border-radius: 20px;
-    padding-left:9px;
-    margin:20px 20px 15px; 
+    padding-left:26px;
+    margin:18px 194px 15px; 
     font-size: 13px;
 }
 
